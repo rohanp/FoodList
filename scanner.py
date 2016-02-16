@@ -15,11 +15,9 @@ mail = poplib.POP3_SSL('pop.gmail.com', '995')
 mail.user(auth.gmail_username)
 mail.pass_(auth.gmail_pass)
 
-
 numbers = ['7032209091',]# '7035010862']
 
 def main():
-
 	if mail.stat()[1] > 0: # is new mail
 		numMessages = len(mail.list()[1])
 
@@ -33,7 +31,6 @@ def main():
 				print(part)
 				if part.get_content_type() == 'text/plain':
 					print(part.get_payload())
-
 
 
 def push(msg):
